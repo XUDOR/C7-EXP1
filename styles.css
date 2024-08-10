@@ -73,14 +73,14 @@ body, html {
 }
 
 .console div {
-  
+  background-color: #444; /* Color for the squares */
   border: 1px solid #888; /* Border for each square */
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  width: 50px; /* Set the width of each square */
-  height: 50px; /* Set the height of each square */
+  width: 60px; /* Set the width of each square */
+  height: 60px; /* Set the height of each square */
 }
 
 
@@ -101,5 +101,19 @@ body, html {
 @media (max-width: 768px) {
   .right-ui {
     width: 100px;
+  }
+}
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .console {
+    grid-template-columns: repeat(2, 60px); /* 2 columns of 60px on smaller screens */
+    grid-template-rows: repeat(5, 60px); /* Adjust rows as needed */
+    justify-content: flex-start; /* Align grid to the left */
+    gap: 5px; /* Adjust spacing for smaller screens */
+  }
+  
+  .console div {
+    width: 50px; /* Slightly smaller squares for mobile */
+    height: 50px;
   }
 }
