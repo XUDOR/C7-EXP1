@@ -1,9 +1,11 @@
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body and HTML Settings */
 body, html {
   font-family: 'Lato', sans-serif;
   font-weight: 100;
@@ -14,6 +16,7 @@ body, html {
   overflow: hidden;
 }
 
+/* Video Container and Styling */
 .video-container {
   position: fixed;
   top: 0;
@@ -34,6 +37,7 @@ body, html {
   object-fit: cover;
 }
 
+/* Header Styling */
 .header {
   position: fixed;
   top: 0;
@@ -45,46 +49,47 @@ body, html {
   text-align: left;
   z-index: 1; /* Ensure it sits above the video */
 }
-.name {
 
+.name {
   font-size: 1.3em;
 }
 
+/* Right UI Panel */
 .right-ui {
   position: fixed;
   top: 0px;
   right: 0;
-  width: 200px;
+  width: 10%; /* Updated to percentage width for responsiveness */
   height: 100%;
   background-color: rgba(32, 35, 42, 1);
-  padding: 10px;
+  padding: 5px;
   z-index: 1; /* Ensure it sits above the video */
   color: white;
   overflow: auto;
 }
+
+/* Console Grid Layout */
 .console {
-  display: grid;
-  grid-template-columns: repeat(3, 60px); /* 3 columns of 60px */
-  grid-template-rows: repeat(3, 60px); /* 3 rows of 60px */
-  gap: 2px; /* Tighter spacing between squares */
-  margin-top: 10px; /* Add some space from the top */
+  display: flex; /* Use flexbox for better wrapping */
+  flex-wrap: wrap; /* Enable wrapping */
   justify-content: center; /* Center the grid horizontally */
   align-content: flex-start; /* Align the grid to the top */
+  gap: 2px; /* Tighter spacing between squares */
+  margin-top: 10px; /* Add some space from the top */
 }
 
 .console div {
-  background-color: #444; /* Color for the squares */
+  
   border: 1px solid #888; /* Border for each square */
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  width: 60px; /* Set the width of each square */
-  height: 60px; /* Set the height of each square */
+  width: 40px; /* Set the width of each square */
+  height: 40px; /* Set the height of each square */
 }
 
-
-
+/* Footer Styling */
 .footer {
   position: fixed;
   bottom: 0;
@@ -98,22 +103,20 @@ body, html {
   z-index: 1; /* Ensure it sits above the video */
 }
 
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .right-ui {
-    width: 100px;
+    width: 20%; /* Adjusted width for smaller screens */
   }
 }
-/* Responsive adjustments */
+
 @media (max-width: 480px) {
-  .console {
-    grid-template-columns: repeat(2, 60px); /* 2 columns of 60px on smaller screens */
-    grid-template-rows: repeat(5, 60px); /* Adjust rows as needed */
-    justify-content: flex-start; /* Align grid to the left */
-    gap: 5px; /* Adjust spacing for smaller screens */
+  .right-ui {
+    width: 20%; /* Adjusted width for very small screens */
   }
   
   .console div {
-    width: 50px; /* Slightly smaller squares for mobile */
-    height: 50px;
+    width: 30px; /* Slightly smaller squares for mobile */
+    height: 30px;
   }
 }
