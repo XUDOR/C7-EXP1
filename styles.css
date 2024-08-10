@@ -54,7 +54,7 @@ body, html {
   position: fixed;
   top: 0px;
   right: 0;
-  width: 170px;
+  width: 200px;
   height: 100%;
   background-color: rgba(32, 35, 42, 1);
   padding: 10px;
@@ -62,6 +62,27 @@ body, html {
   color: white;
   overflow: auto;
 }
+.console {
+  display: grid;
+  grid-template-columns: repeat(3, 60px); /* 3 columns of 60px */
+  grid-template-rows: repeat(3, 60px); /* 3 rows of 60px */
+  gap: 5px; /* Spacing between squares */
+  justify-content: center; /* Center the grid horizontally */
+  align-content: center; /* Center the grid vertically */
+  height: 100%; /* Ensure the grid takes up the full height of the right UI */
+}
+
+.console div {
+ 
+  border: 1px solid #888; /* Border for each square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 30px; /* Set the width of each square */
+  height: 30px; /* Set the height of each square */
+}
+
 
 .footer {
   position: fixed;
