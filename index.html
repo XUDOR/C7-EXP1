@@ -7,22 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="video-container">
+        <video id="background-video" autoplay muted loop playsinline>
+            <source src="assets/video/LIVESHOW-visual_CLIP2b-edit.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
     <header class="header">
-        <h1 class="">Crossing Seven</h1>
+        <div class="name">Crossing Seven</div>
     </header>
-    
-    <div class="container">
-        <div class="left-column">
-            <iframe src="https://player.vimeo.com/video/996863586?badge=0&amp;autopause=0&amp;transparent=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;background=1" 
-                width="100%" height="100%" 
-                frameborder="0" 
-                allow="autoplay; fullscreen; picture-in-picture" 
-                title="LIVESHOW-visual_CLIP1a" 
-                allowfullscreen>
-            </iframe>
-        </div>
-        <div class="right-column">
-            <p>This is the right column (main UI).</p>
+
+    <div class="right-ui">
+        <div class="console">
+            
         </div>
     </div>
     
@@ -30,6 +28,27 @@
         <p>Sticky Footer</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Get the video element
+        const video = document.getElementById('background-video');
+
+        // Log video load status
+        video.addEventListener('loadeddata', () => {
+            console.log('Video loaded successfully:', video.src);
+        });
+
+        // Log errors if the video fails to load
+        video.addEventListener('error', (event) => {
+            console.error('Error occurred while loading video:', event);
+        });
+
+        // Check if the video is playing
+        video.addEventListener('play', () => {
+            console.log('Video is playing');
+        });
+
+        // Log the video ready state
+        console.log('Video readyState:', video.readyState);
+    </script>
 </body>
 </html>
