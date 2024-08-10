@@ -66,22 +66,23 @@ body, html {
   display: grid;
   grid-template-columns: repeat(3, 60px); /* 3 columns of 60px */
   grid-template-rows: repeat(3, 60px); /* 3 rows of 60px */
-  gap: 5px; /* Spacing between squares */
+  gap: 2px; /* Tighter spacing between squares */
+  margin-top: 10px; /* Add some space from the top */
   justify-content: center; /* Center the grid horizontally */
-  align-content: center; /* Center the grid vertically */
-  height: 100%; /* Ensure the grid takes up the full height of the right UI */
+  align-content: flex-start; /* Align the grid to the top */
 }
 
 .console div {
- 
+  
   border: 1px solid #888; /* Border for each square */
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  width: 30px; /* Set the width of each square */
-  height: 30px; /* Set the height of each square */
+  width: 50px; /* Set the width of each square */
+  height: 50px; /* Set the height of each square */
 }
+
 
 
 .footer {
